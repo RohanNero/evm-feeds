@@ -58,7 +58,7 @@ This repo uses the straightforward `slot0()` function to retrieve the latest pri
     )
 ```
 
-The price, `sqrtPriceX96`, is returned as a `uint160` variable. To make the price fit our shared 8 decimal format, we can convert the number from Q64.96 into an integer scaled to 8 decimals. Then, since the price is in terms of 1 USDC to WETH, we calculate the inverse value to get the USDC value of 1 WETH.
+The price, `sqrtPriceX96`, is returned as a `uint160` variable. To make the price fit our shared format, we can convert the number from Q64.96 into an integer scaled to 8 decimals. Then, since the price is in terms of 1 USDC to WETH, we calculate the inverse value to get the USDC value of 1 WETH.
 
 ```solidity
 uint256 flippedPrice = (sqrtPriceX96 >> 96) ** 2;    
